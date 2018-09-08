@@ -2,6 +2,8 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+const port = process.env.PORT || 3000; //server dynamic or static
+
 var app = express();
 
 app.set('view engine', 'hbs'); //set(key, value)
@@ -66,7 +68,8 @@ app.get('/bad',(req, res) => {
 	});
 });
 
-// Localhost
-app.listen(3000, () => {
-	console.log('Server is up on port 3000');
+
+// Localhost 3000 static server 
+app.listen(port, () => {
+	console.log(`Server is up on port ${port}`);
 });
